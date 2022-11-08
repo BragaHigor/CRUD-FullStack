@@ -4,17 +4,6 @@ import styled from "styled-components";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const FormContainer = styled.form`
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
-`;
-
 const Button = styled.button`
   padding: 10px;
   cursor: pointer;
@@ -89,7 +78,6 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
 
     return (
 
-      <FormContainer>
         <Table>
             <Thead>
                 <Tr>
@@ -104,7 +92,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
                 <Tr key={i}>
                     <Td width="30%">{item.titulo}</Td>
                     <Td width="30%">{item.descricao}</Td>
-                    <Td> 
+                  
                       <Button onClick={() => setNumeroSim(numeroSim+1)}>SIM</Button>
                         <p>
                           Quantidade de votos <span>{numeroSim}</span>
@@ -113,7 +101,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
                       <p>
                         Quantidade de votos <span>{numeroNao}</span>
                         </p>
-                    </Td>
+                   
                     <Td alignCenter width="5%">
                         <FaEdit onClick={() => handleEdit(item)} />
                     </Td>
@@ -124,7 +112,6 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
         ))}
       </Tbody>
         </Table>
-        </FormContainer>
     );
 };
 
